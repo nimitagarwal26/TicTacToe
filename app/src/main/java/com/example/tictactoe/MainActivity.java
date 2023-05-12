@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,tag+""+" Zero",Toast.LENGTH_SHORT).show();
             player=1;
         }
-        for(int i=0;i<winningStates.length;i++){
-            if(gameState[winningStates[i][0]]==gameState[winningStates[i][1]] && gameState[winningStates[i][1]]==gameState[winningStates[i][2]] && gameState[winningStates[i][0]]>-1){
-                Toast.makeText(this,"Winner is "+(player==0?1:0),Toast.LENGTH_SHORT).show();
+        for (int[] winningState : winningStates) {
+            if (gameState[winningState[0]] == gameState[winningState[1]] && gameState[winningState[1]] == gameState[winningState[2]] && gameState[winningState[0]] > -1) {
+                Toast.makeText(this, "Winner is " + (player == 0 ? 1 : 0), Toast.LENGTH_SHORT).show();
             }
         }
     }
